@@ -86,18 +86,18 @@ body {
 }
 
 .whatsapp-float {
-    position: fixed;          /* sempre fixo na tela */
+    position: fixed;         
     width: 60px;
     height: 60px;
-    bottom: 20px;             /* distância do rodapé */
-    right: 20px;              /* distância da lateral direita */
+    bottom: 20px;             
+    right: 20px;             
     background-color: #29a71a;
     color: #fff;
-    border-radius: 50%;       /* formato circular */
+    border-radius: 50%;      
     text-align: center;
     font-size: 30px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    z-index: 1000;            /* fica acima dos outros elementos */
+    z-index: 1000;          
     display: flex;
     align-items: center;
     justify-content: center;
@@ -105,7 +105,7 @@ body {
 }
 
 .whatsapp-float:hover {
-    transform: scale(1.1);    /* efeito de zoom ao passar o mouse */
+    transform: scale(1.1);    
     background-color: #20BA5A;
 }
 
@@ -125,7 +125,7 @@ body {
     text-align: center;
     color: var(--white);
     padding: 4rem 0;
-    overflow: hidden; /* evita que o conteúdo escape da seção */
+    overflow: hidden; 
 }
 
 .hero-overlay {
@@ -136,12 +136,12 @@ body {
     bottom: 0;
     background: url('images/hero-background.jpg') center/cover;
     opacity: 0.15;
-    z-index: 0; /* garante que fique atrás */
+    z-index: 0; 
 }
 
 .hero-content {
     position: relative;
-    z-index: 2; /* garante que fique acima da overlay */
+    z-index: 2; 
     max-width: 800px;
     margin: 0 auto;
 }
@@ -173,7 +173,7 @@ body {
 }
 
 .hero-buttons a:hover {
-    background: var(--secondary-color); /* verde-menta */
+    background: var(--secondary-color); 
     color: var(--white);
     transform: translateY(-3px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
@@ -191,18 +191,18 @@ body {
 }
 
 .btn-primary:hover {
-    background-color: var(--primary-color); /* mantém lilás */
-    color: var(--white); /* mantém texto branco */
-    border-color: var(--primary-color); /* borda lilás */
+    background-color: var(--primary-color); 
+    color: var(--white); 
+    border-color: var(--primary-color); 
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 
 .btn-primary {
-    background-color: var(--primary-color); /* Lavanda */
-    color: var(--white); /* Texto branco para contraste */
-    border: none; /* opcional */
+    background-color: var(--primary-color); 
+    color: var(--white); 
+    border: none;
 }
 
 .btn-secondary {
@@ -246,9 +246,9 @@ body {
 
 .sobre-text {
     background-color: var(--white);
-    border-radius: 25px; /* mais oval */
+    border-radius: 25px; 
     padding: 2rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* sombra um pouco mais marcada */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
 }
 
 
@@ -265,7 +265,7 @@ body {
     width: 100%;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    border: 3px solid var(--primary-color); /* borda lilás suave */
+    border: 3px solid var(--primary-color); 
 }
 
 
@@ -306,12 +306,12 @@ body {
 .area-card:nth-child(2),
 .area-card:nth-child(4),
 .area-card:nth-child(6) {
-    background-color: #f3e6f9; /* lilás bem clarinho */
+    background-color: #f3e6f9; 
 }
 
 .area-card:hover {
-    transform: translateY(-10px); /* sobe o card */
-    box-shadow: 0 15px 30px rgba(0,0,0,0.2); /* sombra mais intensa */
+    transform: translateY(-10px); 
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2); 
 }
 
 
@@ -370,8 +370,8 @@ body {
 .depoimento-card {
     background: var(--primary-color);
     color: var(--white);
-    padding: 1rem;              /* reduz o espaçamento interno */
-    border-radius: 15px;        /* bordas um pouco menores */
+    padding: 1rem;              
+    border-radius: 15px;        
     box-shadow: 0 6px 15px rgba(0,0,0,0.12);
     position: relative;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -879,7 +879,36 @@ body {
         text-align: center;
     }
 }
+/* Estilo padrão (desktop) */
+.hero h1 {
+    font-size: 3rem;
+}
 
+/* Tablets (até 1024px) */
+@media (max-width: 1024px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .hero-buttons {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+/* Celulares médios/grandes (até 768px) */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero-content {
+        padding: 2rem 1rem;
+    }
+    .hero-buttons a {
+        width: 100%; /* botões ocupam toda a largura */
+    }
+}
+
+/* Celulares pequenos (até 480px) */
 @media (max-width: 480px) {
     .hero h1 {
         font-size: 1.8rem;
@@ -899,4 +928,35 @@ body {
     .ebooks-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* Ajuste específico para telas pequenas como iPhone SE */
+@media (max-width: 400px) {
+    .hero-buttons {
+        flex-direction: column;   /* empilha os botões */
+        align-items: center;      /* centraliza */
+        gap: 0.8rem;              /* espaço menor entre eles */
+    }
+
+    .hero-buttons a {
+        width: 100%;              /* botão ocupa toda a largura */
+        max-width: 280px;         /* limite para não ficar exagerado */
+        font-size: 0.9rem;        /* texto menor para caber melhor */
+        padding: 0.8rem 1rem;     /* menos padding para não ficar gigante */
+    }
+
+    .hero h1 {
+        font-size: 1.6rem;        /* título menor para caber bem */
+    }
+
+    .hero p {
+        font-size: 0.9rem;        /* texto mais compacto */
+        line-height: 1.4;
+    }
+}
+
+
+img {
+    max-width: 100%;
+    height: auto;
 }
